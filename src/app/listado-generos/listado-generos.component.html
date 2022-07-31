@@ -1,0 +1,33 @@
+<h1></h1>
+<div class="col-8">
+<h2>{{ titulo }}</h2>
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Géneros de Películas</th>
+            <th scope="col">Año de la Primera Cinta</th>
+            <th scope="col">Número de Películas</th>
+            <th scope="col"></th>
+          </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let genero of generos"> <!-- // inicia el for-->
+        <th scope="row">{{ genero.id }}</th>
+        <td>{{genero.nombre | uppercase}}</td><!--pipes current para darle formato de moneda, uppercase par mayuscula-->
+        <td>{{genero.year}}</td> 
+        <td>{{genero.peliculas.length}}</td> <!--length da el numero de elementos que tiene un array-->
+        <td>
+            <a routerLink="/genero/{{genero.id}}" class="btn btn-secondary"><i class="fa-solid fa-circle-arrow-right"></i></a>
+        </td>
+
+      </tr> <!-- // fin de tr y ciclo for-->
+    </tbody>
+    <tfoot>
+        <tr>
+            <td><b>Total de géneros mostrados: </b></td>
+            <td colspan="4">{{ generos.length }}</td>
+        </tr>
+    </tfoot>
+  </table>
+</div>

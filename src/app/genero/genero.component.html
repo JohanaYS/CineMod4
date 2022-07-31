@@ -1,0 +1,30 @@
+<h1></h1>
+<div class="container"> <!--componente padre-->
+    <div class="row">
+     
+      <!-- Team Member 1 -->
+      <div class="col-4">
+        <div class="card border-0 shadow">
+          <img src="{{genero.foto}}" class="card-img-top" alt="">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">{{genero.nombre}}</h5>
+            <div class="card-text text-black-50">{{genero.pais}}</div>
+            <div class="card-text text-black-50">{{genero.year}}</div>
+          </div>
+        </div>
+      </div> <!--fin col-4-->
+      
+      <div class="col-8">
+
+        <h2>Películas del Género</h2>
+        <div class="row">
+        <div class="col-4" *ngFor="let pelicula of genero.peliculas">
+
+          <app-pelicula [pelicula]="pelicula"></app-pelicula> <!--componente hijo-->
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
